@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Book</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<div class="register search">
+			<h1>Book Detail</h1>
+			<div class="links">
+				<a href="{{ url_for('logout') }}">Logout</a>
+				<a href="{{ url_for('search') }}">Back to Search</a>
+			</div>
+			{% if not review %}
+				<form action="{{ url_for('book', book_id=book.id) }}" method="post" autocomplete="off">
+					<select name="rating" id="rating">
+						<option value="">Select Rating</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<br />
+					<textarea cols="200" name="review_text" id="review_text" placeholder="Enter you review"></textarea>
+					<div class="msg">{{ msg }}</div>
+					<input type="submit" value="Submit">
+				</form>
+			{% endif %}
+			{% if book %}
+				<div style="padding-top: 20px;">
+					<table width="100%" cellpadding="5" cellspacing="5">
+						<tr>
+							<th colspan="2" style="border-top: none;">Book Details</th>
+						<tr>
+						<tr>
+							<th>ISBN</th>
+							<td>{{ book.isbn }}</td>
+						</tr>
+						<tr>
+							<th>Title</th>
+							<td>{{ book.title }}</td>
+						</tr>
+						<tr>
+							<th>Author</th>
+							<td>{{ book.author }}</td>
+						</tr>
+						<tr>
+							<th>Year</th>
+							<td>{{ book.year }}</td>
+						</tr>
+					</table>
+				</div>
+			{% endif %}
+			
+			{% if review %}
+				<div style="padding-top: 20px;">
+					<table width="100%" cellpadding="5" cellspacing="5">
+						<tr>
+							<th colspan="2">User Review Details</th>
+						<tr>
+						<tr>
+							<th width="20%">Rating</th>
+							<td>{{ review.rating }}</td>
+						</tr>
+						<tr>
+							<th>Review</th>
+							<td>{{ review.review_text }}</td>
+						</tr>
+					</table>
+				</div>
+			{% endif %}
+			
+			{% if gr_reviews_count %}
+				<div style="padding-top: 20px;">
+					<table width="100%" cellpadding="5" cellspacing="5">
+						<tr>
+							<th colspan="2">Goodreads Review Details</th>
+						<tr>
+						<tr>
+							<th width="40%">Goodreads Reviews count</th>
+							<td>{{ gr_reviews_count }}</td>
+						</tr>
+						<tr>
+							<th>Average rating</th>
+							<td>{{ gr_rating }}</td>
+						</tr>
+					</table>
+				</div>
+			{% endif %}
+		</div>
+	</body>
+</html>

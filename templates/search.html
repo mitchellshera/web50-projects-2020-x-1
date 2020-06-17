@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Search Book</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<div class="register search">
+			<h1>Search</h1>
+			<div class="links">
+				<a href="{{ url_for('logout') }}">Logout</a>
+			</div>
+			<form action="{{ url_for('search') }}" method="post" autocomplete="off">
+				<input type="text" name="isbn" placeholder="ISBN" id="isbn" value="{{ isbn }}">
+				<input type="text" name="title" placeholder="Book Title" id="title" value="{{ title }}">
+				<input type="text" name="author" placeholder="Book Author" id="author" value="{{ author }}">
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Search">
+			</form>
+			{% if res %}
+				<div style="padding-top:20px;">
+					<table width="100%" cellpadding="5" cellspacing="5">
+						<tr>
+							<th>ISBN</th>
+							<th>Title</th>
+							<th>Author</th>
+							<th>Year</th>
+						</tr>
+						{% for temp in res %}
+							<tr>
+								<td><a href="{{ url_for('book',book_id=temp.id) }}">{{ temp.isbn }}<a></td>
+								<td>{{ temp.title }}</td>
+								<td>{{ temp.author }}</td>
+								<td>{{ temp.year }}</td>
+							</tr>
+						{% endfor %}
+					</table>
+				</div>
+			{% endif %}
+		</div>
+	</body>
+</html>
