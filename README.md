@@ -76,15 +76,15 @@ Users can search for book by ISBN, Book Title or Book Author.
 
 ### Search Result
 Search Result shows result based on search criteria (ISBN, Title, Author, Year)
-![search_result](https://raw.githubusercontent.com/vaishalijagtap/web50-projects-2020-x-1/master/screens/search_result.PNG)
+![search-result](https://raw.githubusercontent.com/vaishalijagtap/web50-projects-2020-x-1/master/screens/search-result.PNG)
 
 
 
 ### Book Details
 Details page shows User Review Details (if already submitted by user), Goodreads Review Details section.
 Details page allows user to submit review only once. 
-![book_details](https://raw.githubusercontent.com/vaishalijagtap/web50-projects-2020-x-1/master/screens/book_details.PNG)
-![book_details_user_review](https://raw.githubusercontent.com/vaishalijagtap/web50-projects-2020-x-1/master/screens/book_details_user_review.PNG)
+![book-details](https://raw.githubusercontent.com/vaishalijagtap/web50-projects-2020-x-1/master/screens/book-details.PNG)
+![book-details-user-review](https://raw.githubusercontent.com/vaishalijagtap/web50-projects-2020-x-1/master/screens/book-details-user-review.PNG)
 
 
 ### API Access
