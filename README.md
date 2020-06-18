@@ -4,22 +4,17 @@
 
 In this project, you’ll build a book review website. Users will be able to register for your website and then log in using their username and password. Once they log in, they will be able to search for books, leave reviews for individual books, and see the reviews made by other people. You’ll also use the a third-party API by Goodreads, another book review website, to pull in ratings from a broader audience. Finally, users will be able to query for book details and book reviews programmatically via your website’s API.
 
-Installation
-------------
+Start Up commands
+-----------------
 
-.. code-block:: bash
 
     $ pip3 install -r requirements.txt
 
-.. code-block:: bash
 
     $ set FLASK_APP=application.py
 	
-.. code-block:: bash
 
     $ set DATABASE_URL=<DATABASE_URL>
-
-.. code-block:: bash
 
     $ flask run
 	
