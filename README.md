@@ -21,8 +21,6 @@ Start Up commands
 Usage
 -----
 
-.. code-block:: python
-
     >>> import requests
     >>> res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "KEY", "isbns": "9781632168146"})
     >>> res.json()
@@ -42,7 +40,6 @@ Usage
 
 To import Books data
 
-.. code-block:: bash
 
     $ python3 import.py
 	
@@ -51,8 +48,8 @@ Resources
 
 * `Goodreads API Docs`_
 
-.. _Goodreads API Docs: https://www.goodreads.com/api/index
-.. Navigate to https://www.goodreads.com/api/keys and apply for an API key
+Goodreads API Docs: https://www.goodreads.com/api/index
+Navigate to https://www.goodreads.com/api/keys and apply for an API key
 
 Rationale
 ---------
